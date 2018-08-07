@@ -2,7 +2,7 @@
 $('#search-input').focus();
 
 $('#search-form').submit((e) => {
-    e.preventDefault()
+  e.preventDefault()
 })
 
 class MARVELapi {
@@ -18,17 +18,17 @@ class MARVELapi {
   registerEvents() {
     this.elements.form.on("submit", (e) => {
       e.preventDefault();
-      this.getCharacterName(this.elements.input.val().trim(), (data) => {this.callback(data)} );
+      this.getCharacterName(this.elements.input.val().trim(), (data) => { this.callback(data) });
     });
   }
 
   getCharacterName(name, callback) {
     let url = this.apiUrl;
     let params = {
-      'nameStartsWith' : name ,
-      'limit' : 10,
-      'offset' : 0,
-      'apikey' : 'ce4b9e16e225b6a487af2081d4b29dd7'
+      'nameStartsWith': name,
+      'limit': 10,
+      'offset': 0,
+      'apikey': '4fb747b82d17b24e6ed469f3d3bc6b47'
     };
 
     $.getJSON(url, params)
@@ -43,22 +43,22 @@ class MARVELapi {
   }
 
   callback(data) {
-    if (typeof data !== 'undefined' ||typeof data !== null) {
+    if (typeof data !== 'undefined' || typeof data !== null) {
       return true;
     }
 
-    else if (typeof data === 'undefined' ||typeof data === null) {
+    else if (typeof data === 'undefined' || typeof data === null) {
       return false;
     }
   }
 
   showResults(data) {
-     $('#results').removeClass('hidden')
-     $('#results').html('')
+    $('#results').removeClass('hidden')
+    $('#results').html('')
 
 
-    data.data.results.forEach( (item) => {
-     $('#results').append(`
+    data.data.results.forEach((item) => {
+      $('#results').append(`
           <div class="text-center my-5">
              <h4 class="">${item.name}</h4><br>
              <img class="col-6" src="${item.thumbnail.path}.${item.thumbnail.extension}" ><br>
