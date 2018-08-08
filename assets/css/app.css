@@ -115,3 +115,16 @@ h2.name {
     #attribution a {
         color: rgba(255, 255, 255, 0.6);
     }
+
+    .img-api{
+    width:200px;
+    height: 200px;;
+    }
+
+    .title{
+        color:#c0c0c0
+    }
+
+    .para{
+        color:#c0c0c0
+    }

@@ -60,9 +60,9 @@ class MARVELapi {
     data.data.results.forEach((item) => {
       $('#results').append(`
           <div class="text-center my-5">
-             <h4 class="">${item.name}</h4><br>
-             <img class="col-6" src="${item.thumbnail.path}.${item.thumbnail.extension}" ><br>
-             <h5 class="">Description :</h5>
+             <h4 class="title">${item.name}</h4><br>
+             <img class="col-6 img-api" src="${item.thumbnail.path}.${item.thumbnail.extension}" ><br>
+             <h5 class="desc">Description :</h5>
              <p class="para">${item.description}</p><br>
           </div>
      `);
